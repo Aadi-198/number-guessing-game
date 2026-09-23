@@ -46,6 +46,7 @@ def start():
             guess = int(guess)
         except ValueError:
             print("Enter a valid number")
+            attempts -= 1
             continue
 
         if guess == random_number:
