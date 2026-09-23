@@ -31,21 +31,22 @@ def start():
     else:
         wait()
         print("Please choose a valid option !")
-        exit()
+        return
 
     random_number = random.randint(1,100)
     print("I have guessed a number, try guess it !")
 
     tries = 0
+    win = False
 
     while attempts != 0:
         guess = input("Enter a guess !\n")
 
         try:
-            int(guess)
+            guess = int(guess)
         except ValueError:
             print("Enter a valid number")
-            exit()
+            continue
 
         if guess == random_number:
             attempts -= 1
@@ -68,6 +69,6 @@ def start():
     if win == True:
         print(f"\nYou have successfully guessed the number in {tries} tries !\n")
     else:
-        print("\nYou played well!\n Better luck next time\n")
+        print("\nYou played well!\nBetter luck next time\n")
 
 start()
